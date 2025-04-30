@@ -25,7 +25,6 @@ body {
   background-color: rgba(158, 123, 41, 0.5);
 }
 
-
 .title {
   text-align: center;
   font-weight: 900;
@@ -74,13 +73,11 @@ main section {
   list-style-type: none;
 }
 
-
 .links a {
   color: #000000;
   font-weight: 700;
   text-decoration: none;
 }
-
 
 footer {
   background-color: black;
@@ -98,7 +95,7 @@ td {
   text-align: left;
 }
 table img {
-  width:100px;
+  width: 100px;
   height: 100px;
   border-radius: 50px;
   filter: sepia();
@@ -169,11 +166,11 @@ section form div.div-form {
   main {
     grid-area: main;
     display: grid;
-    grid-template: repeat(17, auto) / repeat(8, 1fr);
+    grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
 
   .text {
-    font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);;
+    font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
 
   .res_princ {
@@ -201,6 +198,10 @@ section form div.div-form {
   .text-list {
     font-size: clamp(0.3125rem, 0.3125rem + 0.5vw, 0.9375rem);
   }
+  .consolas-lista li :hover {
+    text-decoration: solid, underline;
+    color: #291fba;
+  }
   .list > img {
     width: auto;
     height: 20px;
@@ -221,20 +222,21 @@ section form div.div-form {
     width: 75%;
     height: 35dvh;
   }
-  .trailer-port>img{
+  .trailer-port > img {
     width: 75%;
-    height:35dvh;
+    height: 35dvh;
   }
   .links {
-    grid-area: 16/2/18/8;
+    grid-area: 16/2/16/8;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-between;
   }
-/* Aplicamos la metodologia BEM a esta seccion */
 
-  .link__box{
+  /* Aplicamos la metodologia BEM a esta seccion */
+
+  .link__box {
     background-color: #cf9d40;
     border-radius: 10%;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
@@ -246,7 +248,7 @@ section form div.div-form {
     font-size: clamp(0.3125rem, 0.3125rem + 0.5vw, 0.9375rem);
   }
 
-  .link__box:hover{
+  .link__box:hover {
     background-color: #cb3416;
     border-radius: 10%;
     -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
@@ -254,31 +256,49 @@ section form div.div-form {
     box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
 
-
-  .link__box--awards{
+  .link__box--awards {
     background-color: #e6b216;
     border-radius: 10%;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
-
-   .button-top{
-    grid-area: 15/7/15/7;
+  .link__box--awards:hover {
+    background-color: #5594406e;
+    border-radius: 10%;
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
+    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
+  }
+  .button-top {
+    grid-area: 15/8/15/8;
     align-self: center;
     justify-self: center;
-  } */
-  footer {
+  }
+  */ footer {
     grid-area: footer;
   }
 
+  /* Estilos pagina Personajes */
 
-/* Estilos pagina Personajes */
+  .char-section {
+    display: grid;
+    grid-area: 1 / 2 / 16/ 8;
+  }
+  /* Estilos pagina Gameplay */
 
-.char-section{
-  display: grid;
-  grid-area: 1 / 2 / 17 / 8;
-}
+  .res-game {
+    grid-area: 1/2/10/8;
+    background-color: rgba(0, 0, 0, 0.1);
+    filter: sepia();
+  }
+
+  .map {
+    grid-area: 8/2/16/8;
+    background-color: rgba(0, 0, 0, 0.1);
+    filter: sepia();
+  }
+
 }
 
 /* Estilos tablets/Notebooks*/
