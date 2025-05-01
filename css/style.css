@@ -158,10 +158,13 @@ table img {
 
   main {
     grid-area: main;
+    
+  }
+  .main{
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
-
+  
   .text {
     font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
@@ -276,7 +279,7 @@ table img {
 
   .char-section {
     display: grid;
-    grid-area: 1 / 2 / 16/ 8;
+    grid-area: 1 / 2 / 15/ 8;
   }
   /* Estilos pagina Gameplay */
 
