@@ -96,10 +96,15 @@ td {
   text-align: left;
 }
 table img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 50%;
   filter: sepia();
+  object-fit: cover;
+}
+.char-table p {
+  font-size: clamp(0rem, 0rem + 1.75vw, 2.1875rem);
 }
 
 /* Estilos awards */
@@ -111,8 +116,6 @@ table img {
   font-weight: 600;
   color: #cf9d40;
 }
-
-
 
 /*  Estilos smartphones */
 
@@ -159,13 +162,12 @@ table img {
 
   main {
     grid-area: main;
-    
   }
-  .main{
+  .main {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
-  
+
   .text {
     font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
@@ -224,11 +226,12 @@ table img {
     height: 35dvh;
   }
   .links {
-    grid-area: 16/2/16/8;
+    grid-area: 15/2/15/8;
     display: flex;
     flex-flow: row nowrap;
     align-content: center;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.1)
   }
 
   /* Aplicamos la metodologia BEM a esta seccion */
@@ -272,7 +275,7 @@ table img {
     align-self: center;
     justify-self: center;
   }
-   footer {
+  footer {
     grid-area: footer;
   }
 
@@ -280,7 +283,7 @@ table img {
 
   .char-section {
     display: grid;
-    grid-area: 1 / 2 / 15/ 8;
+    grid-area: 1 / 2 / 10/ 8;
   }
   /* Estilos pagina Gameplay */
 
@@ -298,20 +301,19 @@ table img {
 
   /* Estilos pagina Awards */
 
-.awards{
-  grid-area: 1/2/16/8;
-}
-.awards-text{
-  margin: 20px;
-}
-/* Estilos pagina Contacto */
- /* Utilizamos bootstrap y es responsive en todos los anchos de pantalla */
-
+  .awards {
+    grid-area: 1/2/16/8;
+  }
+  .awards-text {
+    margin: 20px;
+  }
+  /* Estilos pagina Contacto */
+  /* Utilizamos bootstrap y es responsive en todos los anchos de pantalla */
 }
 
 /* Estilos tablets/Notebooks*/
 
- @media (max-width: 992px) {
+@media (max-width: 992px) {
   body {
     display: grid;
     grid-template-rows: auto 99% auto;
@@ -354,13 +356,12 @@ table img {
 
   main {
     grid-area: main;
-    
   }
-  .main{
+  .main {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
-  
+
   .text {
     font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
@@ -419,11 +420,12 @@ table img {
     height: 50vh;
   }
   .links {
-    grid-area: 16/2/16/8;
+    grid-area: 15/2/15/8;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
   /* Aplicamos la metodologia BEM a esta seccion */
@@ -475,7 +477,7 @@ table img {
 
   .char-section {
     display: grid;
-    grid-area: 1 / 2 / 15/ 8;
+    grid-area: 1 / 2 / 16 / 8;
   }
   /* Estilos pagina Gameplay */
 
@@ -493,13 +495,13 @@ table img {
 
   /* Estilos pagina Awards */
 
-.awards{
-  grid-area: 1/2/16/8;
+  .awards {
+    grid-area: 1/2/16/8;
+  }
+  .awards-text {
+    margin: 20px;
+  }
 }
-.awards-text{
-  margin: 20px;
-} 
- }
 
 /* Estilos PC escritorio */
 
@@ -546,20 +548,18 @@ table img {
 
   main {
     grid-area: main;
-    
   }
-  .main{
+  .main {
     display: grid;
     grid-template: repeat(10, auto) / repeat(16, 1fr);
   }
-  
+
   .text {
     font-size: clamp(0.9375rem, -0.2951rem + 1.9861vw, 2.1875rem);
   }
 
   .res_princ {
     grid-area: 1/2/2/8;
-    
   }
   .hist_trama {
     grid-area: 2/2/6/16;
@@ -603,7 +603,7 @@ table img {
     grid-area: 9/2/10/16;
     align-items: center;
   }
-  .trailer-port h2 .title{
+  .trailer-port h2 .title {
     grid-area: 1/1/1/2;
     width: 100%;
   }
@@ -665,40 +665,57 @@ table img {
     box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .button-top {
-    grid-area: 9 / 15 / 10 / 16;
+    grid-area: 10 / 16 / 10 / 16;
     align-self: center;
     justify-self: center;
   }
-   footer {
+  footer {
     grid-area: footer;
   }
 
   /* Estilos pagina Personajes */
 
   .char-section {
-    display: grid;
-    grid-area: 1 / 2 / 15/ 8;
+    grid-area: 1 / 2 / 10/ 16;
+  }
+  .text {
+    font-size: clamp(1.125rem, 0.0773rem + 1.6882vw, 2.1875rem);
   }
   /* Estilos pagina Gameplay */
 
   .res-game {
-    grid-area: 1/2/10/8;
+    grid-area: 1/2/8/9;
     background-color: rgba(0, 0, 0, 0.1);
     filter: sepia();
   }
 
   .map {
-    grid-area: 10/2/15/8;
+    grid-area: 1/9/8/16;
     background-color: rgba(0, 0, 0, 0.1);
     filter: sepia();
+    width: fit-content;
+    max-width: 600px;
+    height: auto;
+    max-height: 600px;
+    align-self: center;
+    justify-self: center;
   }
-
   /* Estilos pagina Awards */
 
-.awards{
-  grid-area: 1/2/16/8;
-}
-.awards-text{
-  margin: 20px;
-} 
+  .awards {
+    grid-area: 1/2/9/16;
+  }
+  .awards-text {
+    margin: 20px;
+  }
+
+
+  /* Ajustamos un centrado al formulario de la pagina contacto, ya que en pc de escritorios, se ve muy a la izquierda */
+
+
+  .container{
+    align-self: center;
+    justify-self: center;
+    grid-area: 1/1/9/16;
+  }
 }
