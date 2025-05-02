@@ -212,10 +212,10 @@ table img {
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    grid-area: 9 / 2 / 16 / 8;
+    grid-area: 9 / 2 / 15 / 8;
     justify-content: center;
     align-items: center;
-}
+  }
 
   .trailer-port > video {
     width: 75%;
@@ -226,13 +226,13 @@ table img {
     height: 35dvh;
   }
   .links {
-    grid-area: 16 / 2 / 16 / 8;
+    grid-area: 15/2/15/8;
     display: flex;
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0);
-}
+    background-color: rgba(37, 37, 37, 0.2);
+  }
 
   /* Aplicamos la metodologia BEM a esta seccion */
 
@@ -245,7 +245,7 @@ table img {
   }
 
   .links a {
-    font-size: clamp(0.3125rem, 0.3125rem + 0.5vw, 0.9375rem);
+    font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
   }
 
   .link__box:hover {
@@ -289,20 +289,20 @@ table img {
 
   .res-game {
     grid-area: 1/2/10/8;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(37, 37, 37, 0.2);
     filter: sepia();
   }
 
   .map {
     grid-area: 10/2/15/8;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(37, 37, 37, 0.2);
     filter: sepia();
   }
 
   /* Estilos pagina Awards */
 
   .awards {
-    grid-area: 1/2/16/8;
+    grid-area: 1/2/15/8;
   }
   .awards-text {
     margin: 20px;
@@ -313,7 +313,7 @@ table img {
 
 /* Estilos tablets/Notebooks*/
 
-@media (max-width: 992px) {
+@media (max-width: 992px ) and (min-width:769px) {
   body {
     display: grid;
     grid-template-rows: auto 99% auto;
@@ -409,7 +409,7 @@ table img {
     grid-area: 9 / 2 / 15 / 8;
     justify-content: center;
     align-items: center;
-}
+  }
 
   .trailer-port > video {
     width: 75%;
@@ -439,7 +439,7 @@ table img {
   }
 
   .links a {
-    font-size: clamp(0.3125rem, 0.3125rem + 0.5vw, 0.9375rem);
+    font-size: clamp(0.9375rem, -1.0022rem + 4.0359vw, 1.5rem);
   }
 
   .link__box:hover {
@@ -639,7 +639,7 @@ table img {
   }
 
   .links a {
-    font-size: clamp(1.625rem, 1.0703rem + 0.8937vw, 2.1875rem);
+    font-size: clamp(1.5rem, 0.7619rem + 1.1905vw, 2.25rem);
   }
 
   .link__box:hover {
@@ -685,13 +685,13 @@ table img {
 
   .res-game {
     grid-area: 1/2/8/9;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(37, 37, 37, 0.2);
     filter: sepia();
   }
 
   .map {
     grid-area: 1/9/8/16;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(37, 37, 37, 0.2);
     filter: sepia();
     width: fit-content;
     max-width: 600px;
@@ -709,11 +709,9 @@ table img {
     margin: 20px;
   }
 
-
   /* Ajustamos un centrado al formulario de la pagina contacto, ya que en pc de escritorios, se ve muy a la izquierda */
 
-
-  .container{
+  .container {
     align-self: center;
     justify-self: center;
     grid-area: 1/1/9/16;
