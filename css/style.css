@@ -54,7 +54,7 @@ body {
 
 .text {
   font-family: "Cinzel", serif;
-  font-size: clamp(0.3125rem, 0.3125rem + 1vw, 1.5625rem);
+  font-size: clamp(0.5rem, 0.5rem + 0.7vw, 2.25rem);
 }
 
 main {
@@ -93,26 +93,23 @@ footer {
 }
 
 /* Estilos characters */
-table {
-  border-collapse: collapse;
-}
-
-td {
-  border: 2.5px solid rgb(254, 254, 254);
-  text-align: left;
-}
-
-table img {
+.char img {
   width: 100%;
-  height: auto;
+  height: 15em;
+  max-height: 250px;
   max-width: 250px;
-  border-radius: 50%;
+  border-radius: 25%;
   filter: sepia();
   object-fit: cover;
 }
 
-.char-table p {
-  font-size: clamp(0rem, 0rem + 1.75vw, 2.1875rem);
+.container-char {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 60px auto;
 }
 
 /* Estilos awards */
@@ -162,9 +159,6 @@ table img {
   .main {
     display: grid;
     grid-template: repeat(16, auto)/repeat(8, 1fr);
-  }
-  .text {
-    font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
   .res_princ {
     grid-area: 1/2/2/8;
@@ -258,7 +252,47 @@ table img {
   /* Estilos pagina Personajes */
   .char-section {
     display: grid;
-    grid-area: 1/2/10/8;
+    grid-area: 1/1/10/9;
+  }
+  .char {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px auto;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+  .char .text {
+    position: absolute;
+    opacity: 0;
+  }
+  .char .text,
+  .char img {
+    transition: transform 1s ease-in;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1;
+  }
+  .char:nth-child(odd):hover img {
+    transform: translate(50%);
+    filter: none;
+    transition: all 1s;
+  }
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: all 1s;
+  }
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 1s;
+  }
+  .char:nth-child(even):hover .text {
+    transform: translateX(50%);
+    opacity: 1;
+    transition: all 1s;
   }
   /* Estilos pagina Gameplay */
   .res-game {
@@ -320,9 +354,6 @@ table img {
   .main {
     display: grid;
     grid-template: repeat(16, auto)/repeat(8, 1fr);
-  }
-  .text {
-    font-size: clamp(0.625rem, 0.042rem + 1.8657vw, 0.9375rem);
   }
   .res_princ {
     grid-area: 1/2/2/8;
@@ -416,7 +447,47 @@ table img {
   /* Estilos pagina Personajes */
   .char-section {
     display: grid;
-    grid-area: 1/2/15/8;
+    grid-area: 1/2/10/8;
+  }
+  .char {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px auto;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+  .char .text {
+    position: absolute;
+    opacity: 0;
+  }
+  .char .text,
+  .char img {
+    transition: transform 1s ease-in;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1;
+  }
+  .char:nth-child(odd):hover img {
+    transform: translate(50%);
+    filter: none;
+    transition: all 1s;
+  }
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: all 1s;
+  }
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 1s;
+  }
+  .char:nth-child(even):hover .text {
+    transform: translateX(50%);
+    opacity: 1;
+    transition: all 1s;
   }
   /* Estilos pagina Gameplay */
   .res-game {
@@ -580,10 +651,49 @@ table img {
   }
   /* Estilos pagina Personajes */
   .char-section {
+    display: grid;
     grid-area: 1/2/10/16;
   }
-  .text {
-    font-size: clamp(1.125rem, 0.0773rem + 1.6882vw, 2.1875rem);
+  .char {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px auto;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+  .char .text {
+    position: absolute;
+    opacity: 0;
+  }
+  .char .text,
+  .char img {
+    width: 50%;
+    max-width: 300px;
+    height: 200px;
+    z-index: 1;
+  }
+  .char:nth-child(odd):hover img {
+    transform: translate(50%);
+    filter: none;
+    transition: all 2s;
+  }
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-50%);
+    opacity: 1;
+    font-size: 1rem;
+    transition: all 2s;
+  }
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 2s;
+  }
+  .char:nth-child(even):hover .text {
+    transform: translateX(50%);
+    opacity: 1;
+    font-size: 1rem;
+    transition: all 2s;
   }
   /* Estilos pagina Gameplay */
   .res-game {
