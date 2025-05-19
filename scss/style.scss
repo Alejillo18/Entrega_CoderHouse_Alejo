@@ -240,41 +240,35 @@ footer {
   }
   
   /* Aplicamos la metodologia BEM a esta seccion */
+  
 
-  .link__box {
-    background-color: #cf9d40;
-    border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(158, 123, 41, 0.75);
+@mixin links-styles($background-color, $border-radius, $-webkit-box-shadow, $moz-box-shadow,$box-shadow){
+  background-color: $background-color;
+  border-radius: $border-radius;
+  -webkit-box-shadow: $-webkit-box-shadow;
+  -moz-box-shadow: $moz-box-shadow;
+  box-shadow: $box-shadow;
+}
+
+  .link__box{
+    @include links-styles(#cf9d40,10%,5px 5px 0px 0px rgba(222, 164, 29, 0.75),5px 5px 0px 0px rgba(222, 164, 29, 0.75), 5px 5px 0px 0px rgba(158, 123, 41, 0.75))
   }
+   .link__box:hover{
+    @include links-styles(#cb3416,10%,10px 10px 0px 0px rgba(18, 17, 17, 0.75),10px 10px 0px 0px rgba(20, 20, 20, 0.75), 10px 10px 0px 0px rgba(19, 19, 19, 0.75))
+  }
+  .link__box--awards{
+    @include links-styles(#e6b216,10%,5px 5px 0px 0px rgba(222, 164, 29, 0.75),5px 5px 0px 0px rgba(222, 164, 29, 0.75), 5px 5px 0px 0px rgba(8, 8, 6, 0.75))
+  }
+  .link__box--awards:hover{
+    @include links-styles(#5594406e, 10%, 10px 10px 0px 0px rgba(18, 17, 17, 0.75), 10px 10px 0px 0px rgba(20, 20, 20, 0.75), 10px 10px 0px 0px rgba(19, 19, 19, 0.75))
+  }
+  
 
   .links a {
     font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
   }
 
-  .link__box:hover {
-    background-color: #cb3416;
-    border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
-  }
-
-  .link__box--awards {
-    background-color: #e6b216;
-    border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
-  }
-  .link__box--awards:hover {
-    background-color: #5594406e;
-    border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
-  }
+  
   .button-top {
     grid-area: 15/8/16/9;
     align-self: center;

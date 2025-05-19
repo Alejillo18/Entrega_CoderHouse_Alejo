@@ -224,9 +224,6 @@ footer {
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     box-shadow: 5px 5px 0px 0px rgba(158, 123, 41, 0.75);
   }
-  .links a {
-    font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
-  }
   .link__box:hover {
     background-color: #cb3416;
     border-radius: 10%;
@@ -247,6 +244,9 @@ footer {
     -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
     -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
     box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
+  }
+  .links a {
+    font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
   }
   .button-top {
     grid-area: 15/8/16/9;
