@@ -16,13 +16,20 @@ body {
   color: var(--color_letras);
 }
 
-.links {
+.section-links {
   grid-area: 3/2/3/8;
+}
+
+.links {
   display: flex;
   flex-flow: row wrap;
   align-content: center;
   justify-content: space-between;
   margin: 20px;
+}
+
+.links li {
+  list-style: none;
 }
 
 .button {
@@ -560,7 +567,7 @@ footer {
   .consolas {
     grid-area: 1/8/4/16;
     border: 1px solid #e6b216;
-    background-color: rgba(158, 123, 41, 0.5);
+    background: linear-gradient(135deg, rgba(37, 37, 37, 0.2), #e6b216, #7c0a02);
   }
   .consolas-lista {
     display: flex;
