@@ -286,6 +286,11 @@ footer {
     text-align: center;
     z-index: 1;
   }
+  .char .text em {
+    text-decoration: underline;
+    font-weight: bold;
+    color: wheat;
+  }
   .char:nth-child(odd):hover img {
     transform: translate(50%);
     filter: none;
@@ -480,6 +485,11 @@ footer {
     max-width: 200px;
     text-align: center;
     z-index: 1;
+  }
+  .char .text em {
+    text-decoration: underline;
+    font-weight: bold;
+    color: wheat;
   }
   .char:nth-child(odd):hover img {
     transform: translate(50%);
