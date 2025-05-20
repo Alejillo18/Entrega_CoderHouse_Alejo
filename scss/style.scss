@@ -8,36 +8,46 @@
   box-sizing: border-box;
 }
 
-:root {
-  --color-fondo: #000000;
-  --color_letras: #7c0a02;
-}
+// Variables
+$color_fondo: #000000;
+$color_letras: #7c0a02;
 
 body {
-  background-color: var(--color-fondo);
-  color: var(--color_letras);
+  background-color: $color_fondo;
+  color: $color_letras;
 }
-.section-links{
+.section-links {
   grid-area: 3 / 2 / 3 / 8;
 }
 .links {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: center;
-    justify-content: space-between;
-    margin: 20px;
-  }
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: space-between;
+  margin: 20px;
+}
 
-  .links li {
-    list-style: none;
-  }
+.link__box--deactivated {
+  @extend .link-box !optional;
+  background-color: gray;
+  color: white;
+  border: 1px solid white;
+}
 
+.link__box--deactivated:hover {
+  @extend .link_box !optional;
+  color: $color_fondo;
+}
+
+.links li {
+  list-style: none;
+}
 
 .button {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background-color:  rgba(158, 123, 41, 0.5);
+  background-color: rgba(158, 123, 41, 0.5);
 }
 
 .title {
@@ -112,9 +122,8 @@ footer {
   object-fit: cover;
 }
 
-
-.container-char{
-   display: grid;
+.container-char {
+  display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
   width: 100%;
@@ -145,8 +154,8 @@ footer {
   }
 
   header {
-    background-color: var(--color-fondo);
-    color: var(--color_letras);
+    background-color: $color_fondo;
+    color: $color_letras;
     grid-area: header;
   }
 
@@ -182,8 +191,6 @@ footer {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
-
-  
 
   .res_princ {
     grid-area: 1/2/2/8;
@@ -238,37 +245,64 @@ footer {
     width: 75%;
     height: 35dvh;
   }
-  
+
   /* Aplicamos la metodologia BEM a esta seccion */
-  
 
-@mixin links-styles($background-color, $border-radius, $-webkit-box-shadow, $moz-box-shadow,$box-shadow){
-  background-color: $background-color;
-  border-radius: $border-radius;
-  -webkit-box-shadow: $-webkit-box-shadow;
-  -moz-box-shadow: $moz-box-shadow;
-  box-shadow: $box-shadow;
-}
+  @mixin links-styles(
+    $background-color,
+    $border-radius,
+    $-webkit-box-shadow,
+    $moz-box-shadow,
+    $box-shadow
+  ) {
+    background-color: $background-color;
+    border-radius: $border-radius;
+    -webkit-box-shadow: $-webkit-box-shadow;
+    -moz-box-shadow: $moz-box-shadow;
+    box-shadow: $box-shadow;
+  }
 
-  .link__box{
-    @include links-styles(#cf9d40,10%,5px 5px 0px 0px rgba(222, 164, 29, 0.75),5px 5px 0px 0px rgba(222, 164, 29, 0.75), 5px 5px 0px 0px rgba(158, 123, 41, 0.75))
+  .link__box {
+    @include links-styles(
+      #cf9d40,
+      10%,
+      5px 5px 0px 0px rgba(222, 164, 29, 0.75),
+      5px 5px 0px 0px rgba(222, 164, 29, 0.75),
+      5px 5px 0px 0px rgba(158, 123, 41, 0.75)
+    );
   }
-   .link__box:hover{
-    @include links-styles(#cb3416,10%,10px 10px 0px 0px rgba(18, 17, 17, 0.75),10px 10px 0px 0px rgba(20, 20, 20, 0.75), 10px 10px 0px 0px rgba(19, 19, 19, 0.75))
+  .link__box:hover {
+    @include links-styles(
+      #cb3416,
+      10%,
+      10px 10px 0px 0px rgba(18, 17, 17, 0.75),
+      10px 10px 0px 0px rgba(20, 20, 20, 0.75),
+      10px 10px 0px 0px rgba(19, 19, 19, 0.75)
+    );
   }
-  .link__box--awards{
-    @include links-styles(#e6b216,10%,5px 5px 0px 0px rgba(222, 164, 29, 0.75),5px 5px 0px 0px rgba(222, 164, 29, 0.75), 5px 5px 0px 0px rgba(8, 8, 6, 0.75))
+  .link__box--awards {
+    @include links-styles(
+      #e6b216,
+      10%,
+      5px 5px 0px 0px rgba(222, 164, 29, 0.75),
+      5px 5px 0px 0px rgba(222, 164, 29, 0.75),
+      5px 5px 0px 0px rgba(8, 8, 6, 0.75)
+    );
   }
-  .link__box--awards:hover{
-    @include links-styles(#5594406e, 10%, 10px 10px 0px 0px rgba(18, 17, 17, 0.75), 10px 10px 0px 0px rgba(20, 20, 20, 0.75), 10px 10px 0px 0px rgba(19, 19, 19, 0.75))
+  .link__box--awards:hover {
+    @include links-styles(
+      #5594406e,
+      10%,
+      10px 10px 0px 0px rgba(18, 17, 17, 0.75),
+      10px 10px 0px 0px rgba(20, 20, 20, 0.75),
+      10px 10px 0px 0px rgba(19, 19, 19, 0.75)
+    );
   }
-  
 
   .links a {
     font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
   }
 
-  
   .button-top {
     grid-area: 15/8/16/9;
     align-self: center;
@@ -283,10 +317,9 @@ footer {
   .char-section {
     display: grid;
     grid-area: 1 / 1 / 10/ 9;
-    
   }
 
-  .char{
+  .char {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px auto;
@@ -295,44 +328,44 @@ footer {
     align-items: center;
   }
 
-.char .text{
-  position: absolute;
-  opacity: 0;
-}
+  .char .text {
+    position: absolute;
+    opacity: 0;
+  }
 
   .char .text,
-  .char img{
-  transition: transform 1s ease-in;
-  width: 50%;
-  max-width: 200px;
-  text-align: center;
-  z-index: 1;
+  .char img {
+    transition: transform 1s ease-in;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1;
   }
 
   .char:nth-child(odd):hover img {
-  transform: translate(50%);
-  filter: none;
-  transition: all 1s;
-}
+    transform: translate(50%);
+    filter: none;
+    transition: all 1s;
+  }
 
-.char:nth-child(odd):hover .text {
-  transform: translateX(-50%);
-  opacity: 1;
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-50%);
+    opacity: 1;
 
-  transition: all 1s;
-}
+    transition: all 1s;
+  }
 
-.char:nth-child(even):hover img {
-  transform: translateX(-50%);
-  filter: none;
-  transition: all 1s;
-}
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 1s;
+  }
 
-.char:nth-child(even):hover .text {
-  transform: translateX(50%);
-  opacity: 1;
-  transition: all 1s;
-}
+  .char:nth-child(even):hover .text {
+    transform: translateX(50%);
+    opacity: 1;
+    transition: all 1s;
+  }
 
   /* Estilos pagina Gameplay */
 
@@ -362,7 +395,7 @@ footer {
 
 /* Estilos tablets/Notebooks*/
 
-@media (max-width: 992px ) and (min-width:769px) {
+@media (max-width: 992px) and (min-width: 769px) {
   body {
     display: grid;
     grid-template-rows: auto 99% auto;
@@ -373,8 +406,8 @@ footer {
   }
 
   header {
-    background-color: var(--color-fondo);
-    color: var(--color_letras);
+    background-color: $color_fondo;
+    color: $color_letras;
     grid-area: header;
   }
 
@@ -410,8 +443,6 @@ footer {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
-
-  
 
   .res_princ {
     grid-area: 1/2/2/8;
@@ -519,7 +550,7 @@ footer {
     grid-area: 1 / 2 / 10/ 8;
   }
 
-  .char{
+  .char {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px auto;
@@ -528,44 +559,44 @@ footer {
     align-items: center;
   }
 
-.char .text{
-  position: absolute;
-  opacity: 0;
-}
+  .char .text {
+    position: absolute;
+    opacity: 0;
+  }
 
   .char .text,
-  .char img{
-  transition: transform 1s ease-in;
-  width: 50%;
-  max-width: 200px;
-  text-align: center;
-  z-index: 1;
+  .char img {
+    transition: transform 1s ease-in;
+    width: 50%;
+    max-width: 200px;
+    text-align: center;
+    z-index: 1;
   }
 
   .char:nth-child(odd):hover img {
-  transform: translate(50%);
-  filter: none;
-  transition: all 1s;
-}
+    transform: translate(50%);
+    filter: none;
+    transition: all 1s;
+  }
 
-.char:nth-child(odd):hover .text {
-  transform: translateX(-50%);
-  opacity: 1;
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-50%);
+    opacity: 1;
 
-  transition: all 1s;
-}
+    transition: all 1s;
+  }
 
-.char:nth-child(even):hover img {
-  transform: translateX(-50%);
-  filter: none;
-  transition: all 1s;
-}
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 1s;
+  }
 
-.char:nth-child(even):hover .text {
-  transform: translateX(50%);
-  opacity: 1;
-  transition: all 1s;
-}
+  .char:nth-child(even):hover .text {
+    transform: translateX(50%);
+    opacity: 1;
+    transition: all 1s;
+  }
   /* Estilos pagina Gameplay */
 
   .res-game {
@@ -603,8 +634,8 @@ footer {
   }
 
   header {
-    background-color: var(--color-fondo);
-    color: var(--color_letras);
+    background-color: $color_fondo;
+    color: $color_letras;
     grid-area: header;
   }
 
@@ -655,7 +686,12 @@ footer {
   .consolas {
     grid-area: 1/8/4/16;
     border: 1px solid #e6b216;
-    background: linear-gradient(135deg,rgba(37, 37, 37, 0.2),#e6b216, #7c0a02);
+    background: linear-gradient(
+      135deg,
+      rgba(37, 37, 37, 0.2),
+      #e6b216,
+      #7c0a02
+    );
   }
 
   .consolas-lista {
@@ -707,7 +743,6 @@ footer {
     height: 50vh;
     margin: auto;
   }
-  
 
   /* Aplicamos la metodologia BEM a esta seccion */
 
@@ -761,7 +796,7 @@ footer {
     grid-area: 1 / 2 / 10/ 16;
   }
 
-  .char{
+  .char {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px auto;
@@ -770,45 +805,57 @@ footer {
     align-items: center;
   }
 
-.char .text{
-  position: absolute;
-  opacity: 0;
-}
+  .char .text {
+    position: absolute;
+    opacity: 0;
+    width: 50%;
+    max-width: 400px;
+    height: 400px;
+    z-index: 1;
+  }
 
-  .char .text,
-  .char img{
-  width: 50%;
-  max-width: 300px;
-  height: 200px;
-  z-index: 1;
+  .char img {
+    height: 400px;
+    width: 400px;
+    max-width: 600px;
+    max-height: 600px;
+    z-index: 1;
+  }
+
+  .char .text em{
+    text-decoration: underline;
+    font-weight: bold;
+    color: $color_fondo;
   }
 
   .char:nth-child(odd):hover img {
-  transform: translate(50%);
-  filter: none;
-  transition: all 2s;
-}
+    transform: translate(50%);
+    filter: none;
+    transition: all 2s;
+  }
 
-.char:nth-child(odd):hover .text {
-  transform: translateX(-50%);
-  opacity: 1;
-  font-size: 1rem;
-  transition: all 2s;
-}
+  .char:nth-child(odd):hover .text {
+    transform: translateX(-60%);
+    opacity: 1;
+    font-size: 2rem;
+    transition: all 2s;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
 
-.char:nth-child(even):hover img {
-  transform: translateX(-50%);
-  filter: none;
-  transition: all 2s;
-}
+  .char:nth-child(even):hover img {
+    transform: translateX(-50%);
+    filter: none;
+    transition: all 2s;
+  }
 
-.char:nth-child(even):hover .text {
-  transform: translateX(50%);
-  opacity: 1;
-  font-size: 1rem;
-  transition: all 2s;
-}
-  
+  .char:nth-child(even):hover .text {
+    transform: translateX(60%);
+    opacity: 1;
+    font-size: 2rem;
+    transition: all 2s;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+
   /* Estilos pagina Gameplay */
 
   .res-game {

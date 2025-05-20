@@ -6,6 +6,8 @@
     <title>Página principal - Red Dead Redemption II</title>
     <link rel="stylesheet" href="./css/style.css" />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
   </head>
   <body>
@@ -22,26 +24,28 @@
         <section class="section-links">
           <nav>
             <ul class="links">
-              <li><div class="link__box">
-              <a href="pages/characters.html">Personajes</a>
-            </div></li>
               <li>
                 <div class="link__box">
-              <a href="pages/gameplay.html">Gameplay</a>
-            </div>
+                  <a href="pages/characters.html">Personajes</a>
+                </div>
+              </li>
+              <li>
+                <div class="link__box">
+                  <a href="pages/gameplay.html">Gameplay</a>
+                </div>
               </li>
               <li>
                 <div class="link__box--awards">
-              <a href="pages/awards.html">Game Awards</a>
-            </div>
+                  <a href="pages/awards.html">Game Awards</a>
+                </div>
               </li>
               <li>
                 <div class="link__box">
-              <a href="pages/contact.html">Contacto</a>
-            </div>
+                  <a href="pages/contact.html">Contacto</a>
+                </div>
               </li>
               <li>
-                <div class="link__box">
+                <div class="link__box--deactivated">
                   <a href="#">Pagina Principal</a>
                 </div>
               </li>
@@ -148,7 +152,12 @@
 
         <!--seccion trailer e imagen de portada-->
 
-        <section class="trailer-port">
+        <section
+          class="trailer-port"
+          ,
+          data-aos="fade-up"
+          data-aos-duration="3000"
+        >
           <h2 class="title">Tráiler:</h2>
           <video
             src="./assets/Red Dead Redemption 2 Trailer.mp4"
@@ -174,5 +183,10 @@
         </em>
       </p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

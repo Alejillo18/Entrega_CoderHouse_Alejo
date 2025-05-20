@@ -10,6 +10,7 @@
       href="../assets/favicon.png"
       type="image/x-icon"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -25,23 +26,25 @@
         <section class="section-links">
           <nav>
             <ul class="links">
-              <li><div class="link__box">
-              <a href="#">Personajes</a>
-            </div></li>
+              <li>
+                <div class="link__box--deactivated">
+                  <a href="#">Personajes</a>
+                </div>
+              </li>
               <li>
                 <div class="link__box">
-              <a href="./gameplay.html">Gameplay</a>
-            </div>
+                  <a href="./gameplay.html">Gameplay</a>
+                </div>
               </li>
               <li>
                 <div class="link__box--awards">
-              <a href="./awards.html">Game Awards</a>
-            </div>
+                  <a href="./awards.html">Game Awards</a>
+                </div>
               </li>
               <li>
                 <div class="link__box">
-              <a href="./contact.html">Contacto</a>
-            </div>
+                  <a href="./contact.html">Contacto</a>
+                </div>
               </li>
               <li>
                 <div class="link__box">
@@ -62,9 +65,9 @@
               Personajes principales de Red dead Redemption II
             </h2>
             <div class="container-char">
-              <div class="char">
+              <div class="char" , data-aos="zoom-in">
                 <p class="text">
-                  Arthur Morgan: <br />
+                  <em>Arthur Morgan:</em> <br />
                   Protagonista del juego, un forajido leal a la pandilla Van der
                   Linde que atraviesa un conflicto moral mientras su mundo se
                   desmorona.
@@ -72,9 +75,9 @@
                 <img src="../assets/Arthur_Morgan.webp" alt="Morgan" />
               </div>
 
-              <div class="char">
+              <div class="char" , data-aos="zoom-in">
                 <p class="text">
-                  Dutch van der Linde: <br />
+                  <em>Dutch van der Linde:</em> <br />
 
                   Líder carismático pero cada vez más inestable de la pandilla,
                   cuya obsesión por la supervivencia lo lleva a tomar decisiones
@@ -84,9 +87,9 @@
                 <img src="../assets/Dutch_Van_der_Linde.webp" alt="Dutch" />
               </div>
 
-              <div class="char">
+              <div class="char" , data-aos="zoom-in">
                 <p class="text">
-                  John Marston: <br />
+                  <em>John Marston:</em> <br />
                   Joven pistolero que busca dejar atrás la vida criminal para
                   proteger a su familia, protagonista del primer Red Dead
                   Redemption.
@@ -95,9 +98,9 @@
                 <img src="../assets/John_Marston.webp" alt="John" />
               </div>
 
-              <div class="char">
+              <div class="char" ,data-aos="zoom-in">
                 <p class="text">
-                  Micah Bell: <br />
+                  <em>Micah Bell:</em> <br />
                   Traicionero y despiadado miembro de la pandilla, cuyas
                   acciones desatan la caída del grupo.
                 </p>
@@ -105,18 +108,18 @@
                 <img src="../assets/Micah_Bell.webp" alt="Micah" />
               </div>
 
-              <div class="char">
+              <div class="char" ,data-aos="zoom-in">
                 <p class="text">
-                  Sadie Adler: <br />
+                  <em>Sadie Adler:</em> <br />
                   Viuda que se une a la pandilla tras la muerte de su esposo y
                   se convierte en una feroz cazadora de recompensas.
                 </p>
                 <img src="../assets/Sadie_Adler.webp" alt="Sadie" />
               </div>
 
-              <div class="char">
+              <div class="char" ,data-aos="zoom-in">
                 <p class="text">
-                  Charles Smith: <br />
+                  <em>Charles Smith:</em> <br />
                   Guerrero fuerte y noble con ascendencia nativa y
                   afroamericana, uno de los más leales aliados de Arthur.
                 </p>
@@ -124,9 +127,9 @@
                 <img src="../assets/Charles_Smith.webp" alt="Charles" />
               </div>
 
-              <div class="char">
+              <div class="char" ,data-aos="zoom-in">
                 <p class="text">
-                  Hosea Matthews: <br />
+                  <em>Hosea Matthews:</em> <br />
                   Consejero sabio y experimentado de la pandilla, intenta
                   mantener a Dutch bajo control.
                 </p>
@@ -153,5 +156,9 @@
         © 2025 Fanpage de Red Dead Redemption II. Todos los derechos reservados.
       </p>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
