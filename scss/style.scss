@@ -63,7 +63,7 @@ body {
 .subtitle {
   font-family: "Playfair Display", serif;
   text-decoration: underline;
-  font-size: clamp(0.5rem, 0.5rem + 0.7vw, 2.25rem);
+  font-size: clamp(0.5rem, 0.5rem + 0.9115vw, 0.9375rem);
 }
 
 #logo {
@@ -239,11 +239,11 @@ footer {
 
   .trailer-port > video {
     width: 75%;
-    height: 30dvh;
+    height: 30vh;
   }
   .trailer-port > img {
     width: 75%;
-    height: 30dvh;
+    height: 30vh;
   }
 
   /* Aplicamos la metodologia BEM a esta seccion */
