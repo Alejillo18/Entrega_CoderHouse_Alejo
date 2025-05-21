@@ -215,11 +215,11 @@ footer {
   }
   .trailer-port > video {
     width: 75%;
-    height: 20vh;
+    height: 10vh;
   }
   .trailer-port > img {
     width: 75%;
-    height: 20vh;
+    height: 10vh;
   }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
