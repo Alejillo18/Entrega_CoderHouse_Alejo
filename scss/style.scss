@@ -47,7 +47,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background-color: rgba(158, 123, 41, 0.5);
+  background: radial-gradient($color_letras ,$color_fondo);
 }
 
 .title {
@@ -234,7 +234,6 @@ footer {
     justify-items: center;
     grid-area: 9 / 2 / 15 / 8;
     justify-content: center;
-    align-items: center;
   }
 
   .trailer-port > video {
@@ -694,12 +693,13 @@ footer {
 
   .consolas {
     grid-area: 1/8/4/16;
-    border: 1px solid #e6b216;
     background: linear-gradient(
-      135deg,
-      rgba(37, 37, 37, 0.2),
+      45deg,
+      rgba(37, 37, 37,0.001),
+      #6c4a059e,
       #e6b216,
-      #7c0a02
+      #a8550d,
+      #7c0a02bb
     );
   }
 
