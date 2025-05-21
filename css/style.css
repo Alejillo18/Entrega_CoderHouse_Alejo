@@ -12,7 +12,7 @@ body {
 }
 
 .section-links {
-  grid-area: 3/2/3/8;
+  grid-area: 3/1/3/9;
 }
 
 .links {
@@ -51,7 +51,7 @@ body {
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  font-size: clamp(0.3125rem, 0.3125rem + 1.75vw, 2.5rem);
+  font-size: clamp(0.875rem, 0.875rem + 0.55vw, 2.25rem);
 }
 
 .subtitle {
@@ -215,11 +215,11 @@ footer {
   }
   .trailer-port > video {
     width: 75%;
-    height: 35dvh;
+    height: 40dvh;
   }
   .trailer-port > img {
     width: 75%;
-    height: 35dvh;
+    height: 40dvh;
   }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
