@@ -8,7 +8,7 @@
 
 body {
   background-color: #000000;
-  color: #7c0a02;
+  color: #f7483b;
 }
 
 .section-links {
@@ -41,7 +41,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background: radial-gradient(#7c0a02, #000000);
+  background: radial-gradient(#f7483b, #000000);
 }
 
 .title {
@@ -141,7 +141,7 @@ footer {
   }
   header {
     background-color: #000000;
-    color: #7c0a02;
+    color: #f7483b;
     grid-area: header;
   }
   .header-content {
@@ -340,7 +340,7 @@ footer {
   }
   header {
     background-color: #000000;
-    color: #7c0a02;
+    color: #f7483b;
     grid-area: header;
   }
   .header-content {
@@ -538,7 +538,7 @@ footer {
   }
   header {
     background-color: #000000;
-    color: #7c0a02;
+    color: #f7483b;
     grid-area: header;
   }
   .header-content {
