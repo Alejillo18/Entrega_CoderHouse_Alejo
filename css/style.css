@@ -52,6 +52,7 @@ body {
   text-transform: uppercase;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   font-size: clamp(0rem, 0rem + 2vw, 2.5rem);
+  margin-top: 35px;
 }
 
 .subtitle {
