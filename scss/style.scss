@@ -47,7 +47,7 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background: radial-gradient($color_letras ,$color_fondo);
+  background: radial-gradient($color_letras, $color_fondo);
 }
 
 .title {
@@ -279,7 +279,6 @@ footer {
       10px 10px 0px 0px rgba(20, 20, 20, 0.75),
       10px 10px 0px 0px rgba(19, 19, 19, 0.75)
     );
-    
   }
   .link__box--awards {
     @include links-styles(
@@ -342,7 +341,7 @@ footer {
     text-align: center;
     z-index: 1;
   }
-  .char .text em{
+  .char .text em {
     text-decoration: underline;
     font-weight: bold;
     color: wheat;
@@ -577,7 +576,7 @@ footer {
     text-align: center;
     z-index: 1;
   }
-  .char .text em{
+  .char .text em {
     text-decoration: underline;
     font-weight: bold;
     color: wheat;
@@ -697,7 +696,7 @@ footer {
     grid-area: 1/8/4/16;
     background: linear-gradient(
       45deg,
-      rgba(37, 37, 37,0.001),
+      rgba(37, 37, 37, 0.001),
       #6c4a059e,
       #e6b216,
       #a8550d,
@@ -833,7 +832,7 @@ footer {
     z-index: 1;
   }
 
-  .char .text em{
+  .char .text em {
     text-decoration: underline;
     font-weight: bold;
     color: wheat;
