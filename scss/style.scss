@@ -67,6 +67,10 @@ body {
   font-size: clamp(0rem, 0rem + 1.25vw, 1.5625rem);
 }
 
+h2,h3{
+  font-size: clamp(0.8125rem, 0.8125rem + 1.4vw, 3.4375rem);
+}
+
 #logo {
   border-radius: 35%;
 }
