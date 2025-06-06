@@ -14,9 +14,11 @@ body {
 
 .links {
   display: flex;
-  flex-flow: column nowrap;
-  align-items: space-around;
+  flex-flow: column wrap;
+  align-content: center;
   justify-content: space-between;
+  flex-grow: 1;
+  flex-shrink: 1;
   margin: 50px;
 }
 
@@ -217,7 +219,7 @@ footer {
   }
   .menu-btn {
     position: fixed;
-    top: 50%;
+    top: 90%;
     left: 0;
     transform: translateY(-50%);
     z-index: 1003;
@@ -235,7 +237,7 @@ footer {
     content: "✖";
   }
   #menu-toggle:checked + .menu-btn {
-    left: 160px;
+    left: 180px;
   }
   .overlay {
     position: fixed;
@@ -257,25 +259,37 @@ footer {
     position: fixed;
     top: 0;
     left: -250px;
-    width: 170px;
+    width: 185px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
     transition: left 0.3s ease;
     z-index: 1002;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .sidebar .links a {
+    display: flex;
+    gap: 25px;
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: clamp(0.3125rem, 0.269rem + 1.3928vw, 0.9375rem);
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  .sidebar .links a:hover {
+    background: rgba(247, 72, 59, 0.15);
+    color: #f7483b;
+    transform: translateX(2px);
   }
   #menu-toggle:checked ~ .sidebar {
     left: 0;
-  }
-  .sidebar .links a {
-    display: block;
-    margin: 10px, 0, 10px, 0;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-  }
-  .sidebar .links a:hover {
-    color: #f7483b;
   }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
@@ -371,6 +385,10 @@ footer {
   }
   /* Estilos pagina Contacto */
   /* Utilizamos bootstrap y es responsive en todos los anchos de pantalla */
+  .container {
+    align-self: center;
+    justify-self: center;
+  }
 }
 /* Estilos tablets/Notebooks*/
 @media (max-width: 992px) and (min-width: 769px) {
@@ -484,7 +502,7 @@ footer {
     content: "✖";
   }
   #menu-toggle:checked + .menu-btn {
-    left: 240px;
+    left: 255px;
   }
   .overlay {
     position: fixed;
@@ -506,25 +524,38 @@ footer {
     position: fixed;
     top: 0;
     left: -250px;
-    width: 250px;
+    width: 260px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
     transition: left 0.3s ease;
     z-index: 1002;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .sidebar .links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: clamp(0.9375rem, -0.9936rem + 4.0179vw, 1.5rem);
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  .sidebar .links a:hover {
+    background: rgba(247, 72, 59, 0.15);
+    color: #f7483b;
+    transform: translateX(6px);
   }
   #menu-toggle:checked ~ .sidebar {
     left: 0;
-  }
-  .sidebar .links a {
-    display: block;
-    margin: 10px;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-  }
-  .sidebar .links a:hover {
-    color: #f7483b;
   }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
@@ -617,6 +648,10 @@ footer {
   }
   .awards-text {
     margin: 20px;
+  }
+  .container {
+    align-self: center;
+    justify-self: center;
   }
 }
 /* Estilos PC escritorio */
@@ -780,25 +815,38 @@ footer {
     position: fixed;
     top: 0;
     left: -250px;
-    width: 250px;
+    width: 240px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
     transition: left 0.3s ease;
     z-index: 1002;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .sidebar .links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 1.1rem;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  .sidebar .links a:hover {
+    background: rgba(247, 72, 59, 0.15);
+    color: #f7483b;
+    transform: translateX(6px);
   }
   #menu-toggle:checked ~ .sidebar {
     left: 0;
-  }
-  .sidebar .links a {
-    display: block;
-    margin: 10px;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-  }
-  .sidebar .links a:hover {
-    color: #f7483b;
   }
   .button-top {
     grid-area: 10/16/10/16;
