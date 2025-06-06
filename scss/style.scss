@@ -16,20 +16,23 @@ body {
   background-color: $color_fondo;
   color: $color_letras;
 }
-.section-links {
-  grid-area: 3 / 1 / 3 / 9;
-}
+
+// .section-links {
+//   grid-area: 3 / 1 / 3 / 9;
+// }
+
+
 .links {
   display: flex;
-  flex-flow: row nowrap;
-  align-content: center;
+  flex-flow: column nowrap;
+  align-items: space-around;
   justify-content: space-between;
-  margin: 20px;
+  margin: 50px;
 }
 
 .link__box--deactivated {
   @extend .link-box !optional;
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.247);
   color: white;
   border: 1px solid white;
 }
@@ -67,7 +70,8 @@ body {
   font-size: clamp(0rem, 0rem + 1.25vw, 1.5625rem);
 }
 
-h2,h3{
+h2,
+h3 {
   font-size: clamp(0.8125rem, 0.8125rem + 1.4vw, 3.4375rem);
 }
 
@@ -168,6 +172,7 @@ footer {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(8, 0.5fr);
   }
+
   .header-content .title {
     grid-area: 1/3/1/7;
   }
@@ -192,6 +197,7 @@ footer {
   main {
     grid-area: main;
   }
+
   .main {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
@@ -200,6 +206,7 @@ footer {
   .res_princ {
     grid-area: 1/2/2/8;
   }
+
   .hist_trama {
     grid-area: 2/2/8/8;
   }
@@ -212,6 +219,7 @@ footer {
     display: flex;
     flex-direction: row;
   }
+
   .list {
     display: flex;
     flex-flow: row wrap;
@@ -219,14 +227,17 @@ footer {
     justify-content: space-around;
     border: solid 2px rgba(255, 255, 255, 0.1);
   }
+
   .text-list {
     font-size: clamp(0rem, 0rem + 1.3021vw, 0.625rem);
   }
+
   .consolas-lista li :hover {
     text-decoration: solid, underline;
     color: #291fba;
   }
-  .list > img {
+
+  .list>img {
     width: auto;
     height: 20px;
     border-radius: 10px;
@@ -241,24 +252,23 @@ footer {
     justify-content: center;
   }
 
-  .trailer-port > video {
+  .trailer-port>video {
     width: 75%;
     height: 20vh;
   }
-  .trailer-port > img {
+
+  .trailer-port>img {
     width: 75%;
     height: 20vh;
   }
 
   /* Aplicamos la metodologia BEM a esta seccion */
 
-  @mixin links-styles(
-    $background-color,
+  @mixin links-styles($background-color,
     $border-radius,
     $-webkit-box-shadow,
     $moz-box-shadow,
-    $box-shadow
-  ) {
+    $box-shadow ) {
     background-color: $background-color;
     border-radius: $border-radius;
     -webkit-box-shadow: $-webkit-box-shadow;
@@ -267,40 +277,35 @@ footer {
   }
 
   .link__box {
-    @include links-styles(
-      #cf9d40,
+    @include links-styles(#cf9d40,
       10%,
       5px 5px 0px 0px rgba(222, 164, 29, 0.75),
       5px 5px 0px 0px rgba(222, 164, 29, 0.75),
-      5px 5px 0px 0px rgba(158, 123, 41, 0.75)
-    );
+      5px 5px 0px 0px rgba(158, 123, 41, 0.75));
   }
+
   .link__box:hover {
-    @include links-styles(
-      #cb3416,
+    @include links-styles(#cb3416,
       10%,
       10px 10px 0px 0px rgba(18, 17, 17, 0.75),
       10px 10px 0px 0px rgba(20, 20, 20, 0.75),
-      10px 10px 0px 0px rgba(19, 19, 19, 0.75)
-    );
+      10px 10px 0px 0px rgba(19, 19, 19, 0.75));
   }
+
   .link__box--awards {
-    @include links-styles(
-      #e6b216,
+    @include links-styles(#e6b216,
       10%,
       5px 5px 0px 0px rgba(222, 164, 29, 0.75),
       5px 5px 0px 0px rgba(222, 164, 29, 0.75),
-      5px 5px 0px 0px rgba(8, 8, 6, 0.75)
-    );
+      5px 5px 0px 0px rgba(8, 8, 6, 0.75));
   }
+
   .link__box--awards:hover {
-    @include links-styles(
-      #5594406e,
+    @include links-styles(#5594406e,
       10%,
       10px 10px 0px 0px rgba(18, 17, 17, 0.75),
       10px 10px 0px 0px rgba(20, 20, 20, 0.75),
-      10px 10px 0px 0px rgba(19, 19, 19, 0.75)
-    );
+      10px 10px 0px 0px rgba(19, 19, 19, 0.75));
   }
 
   .links a {
@@ -312,6 +317,7 @@ footer {
     align-self: center;
     justify-self: center;
   }
+
   footer {
     grid-area: footer;
   }
@@ -345,11 +351,13 @@ footer {
     text-align: center;
     z-index: 1;
   }
+
   .char .text em {
     text-decoration: underline;
     font-weight: bold;
     color: wheat;
   }
+
   .char:nth-child(odd):hover img {
     transform: translate(50%);
     filter: none;
@@ -394,9 +402,11 @@ footer {
   .awards {
     grid-area: 1/2/15/8;
   }
+
   .awards-text {
     margin: 20px;
   }
+
   /* Estilos pagina Contacto */
   /* Utilizamos bootstrap y es responsive en todos los anchos de pantalla */
 }
@@ -423,6 +433,7 @@ footer {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(8, 0.5fr);
   }
+
   .header-content .title {
     grid-area: 1/3/1/7;
   }
@@ -447,6 +458,7 @@ footer {
   main {
     grid-area: main;
   }
+
   .main {
     display: grid;
     grid-template: repeat(16, auto) / repeat(8, 1fr);
@@ -455,6 +467,7 @@ footer {
   .res_princ {
     grid-area: 1/2/2/8;
   }
+
   .hist_trama {
     grid-area: 2/2/8/8;
   }
@@ -467,6 +480,7 @@ footer {
     display: flex;
     flex-direction: row;
   }
+
   .list {
     display: flex;
     flex-flow: row wrap;
@@ -474,14 +488,17 @@ footer {
     justify-content: space-around;
     border: solid 2px rgba(255, 255, 255, 0.1);
   }
+
   .text-list {
     font-size: clamp(0.625rem, -1.5179rem + 4.4643vw, 1.25rem);
   }
+
   .consolas-lista li :hover {
     text-decoration: solid, underline;
     color: #291fba;
   }
-  .list > img {
+
+  .list>img {
     width: auto;
     height: 20px;
     border-radius: 10px;
@@ -497,11 +514,12 @@ footer {
     align-items: center;
   }
 
-  .trailer-port > video {
+  .trailer-port>video {
     width: 75%;
     height: 55dvh;
   }
-  .trailer-port > img {
+
+  .trailer-port>img {
     width: 60%;
     height: 50vh;
   }
@@ -509,7 +527,7 @@ footer {
   /* Aplicamos la metodologia BEM a esta seccion */
 
   .link__box {
-    background-color: #cf9d40;
+    background-color: #cf9d4044;
     border-radius: 10%;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
@@ -521,7 +539,7 @@ footer {
   }
 
   .link__box:hover {
-    background-color: #cb3416;
+    background-color: #cb341644;
     border-radius: 10%;
     -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
     -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
@@ -529,24 +547,27 @@ footer {
   }
 
   .link__box--awards {
-    background-color: #e6b216;
+    background-color: #e6b2165b;
     border-radius: 10%;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
+
   .link__box--awards:hover {
-    background-color: #5594406e;
+    background-color: #44633a4b;
     border-radius: 10%;
     -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
     -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
     box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
+
   .button-top {
     grid-area: 15/8/16/9;
     align-self: center;
     justify-self: center;
   }
+
   footer {
     grid-area: footer;
   }
@@ -580,6 +601,7 @@ footer {
     text-align: center;
     z-index: 1;
   }
+
   .char .text em {
     text-decoration: underline;
     font-weight: bold;
@@ -610,6 +632,7 @@ footer {
     opacity: 1;
     transition: all 1s;
   }
+
   /* Estilos pagina Gameplay */
 
   .res-game {
@@ -629,6 +652,7 @@ footer {
   .awards {
     grid-area: 1/2/15/8;
   }
+
   .awards-text {
     margin: 20px;
   }
@@ -656,6 +680,7 @@ footer {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(8, 0.5fr);
   }
+
   .header-content .title {
     grid-area: 1/3/1/7;
   }
@@ -680,6 +705,7 @@ footer {
   main {
     grid-area: main;
   }
+
   .main {
     display: grid;
     grid-template: repeat(10, auto) / repeat(16, 1fr);
@@ -692,20 +718,19 @@ footer {
   .res_princ {
     grid-area: 1/2/2/8;
   }
+
   .hist_trama {
     grid-area: 2/2/6/16;
   }
 
   .consolas {
     grid-area: 1/8/4/16;
-    background: linear-gradient(
-      45deg,
-      rgba(37, 37, 37, 0.001),
-      #6c4a059e,
-      #e6b216,
-      #a8550d,
-      #7c0a02bb
-    );
+    background: linear-gradient(45deg,
+        rgba(37, 37, 37, 0.001),
+        #6c4a059e,
+        #e6b216,
+        #a8550d,
+        #7c0a02bb);
   }
 
   .consolas-lista {
@@ -714,6 +739,7 @@ footer {
     align-items: center;
     justify-content: space-evenly;
   }
+
   .list {
     display: flex;
     flex-flow: row wrap;
@@ -721,14 +747,17 @@ footer {
     justify-content: space-around;
     border: solid 2px rgba(255, 255, 255, 0.1);
   }
+
   .text-list {
     font-size: clamp(0.625rem, -1.5179rem + 4.4643vw, 1.25rem);
   }
+
   .consolas-lista li :hover {
     text-decoration: solid, underline;
     color: #291fba;
   }
-  .list > img {
+
+  .list>img {
     width: auto;
     height: 20px;
     border-radius: 10px;
@@ -740,18 +769,20 @@ footer {
     grid-area: 9/2/10/16;
     align-items: center;
   }
+
   .trailer-port h2 .title {
     grid-area: 1/1/1/2;
     width: 100%;
   }
 
-  .trailer-port > video {
+  .trailer-port>video {
     grid-area: 2/1/3/2;
     width: 75%;
     height: 50vh;
     margin: auto;
   }
-  .trailer-port > img {
+
+  .trailer-port>img {
     grid-area: 2/2/2/2;
     width: 50%;
     height: 50vh;
@@ -761,7 +792,7 @@ footer {
   /* Aplicamos la metodologia BEM a esta seccion */
 
   .link__box {
-    background-color: #cf9d40;
+    background-color: #c5953c60;
     border-radius: 10%;
     -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
@@ -787,6 +818,7 @@ footer {
     -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
     box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
+
   .link__box--awards:hover {
     background-color: #5594406e;
     border-radius: 10%;
@@ -794,11 +826,91 @@ footer {
     -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
     box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
+
+  /* --- Sidebar funcional --- */
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1003;
+    background-color: $color_fondo;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: left 0.3s ease;
+  }
+
+  .menu-btn::after {
+    content: "☰";
+  }
+
+  #menu-toggle:checked+.menu-btn::after {
+    content: "✖";
+  }
+
+  #menu-toggle:checked+.menu-btn {
+    left: 240px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked~.overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1002;
+  }
+
+  #menu-toggle:checked~.sidebar {
+    left: 0;
+  }
+
+  .sidebar .links a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .sidebar .links a:hover {
+    background-color: #444;
+  }
+
+
   .button-top {
     grid-area: 10 / 16 / 10 / 16;
     align-self: center;
     justify-self: center;
   }
+
   footer {
     grid-area: footer;
   }
@@ -889,11 +1001,13 @@ footer {
     align-self: center;
     justify-self: center;
   }
+
   /* Estilos pagina Awards */
 
   .awards {
     grid-area: 1/2/9/16;
   }
+
   .awards-text {
     margin: 20px;
   }
