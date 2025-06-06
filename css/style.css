@@ -20,16 +20,6 @@ body {
   margin: 50px;
 }
 
-.link__box--deactivated {
-  background-color: rgba(128, 128, 128, 0.247);
-  color: white;
-  border: 1px solid white;
-}
-
-.link__box--deactivated:hover {
-  color: #000000;
-}
-
 .links li {
   list-style: none;
 }
@@ -55,7 +45,7 @@ body {
 .subtitle {
   font-family: "Playfair Display", serif;
   text-decoration: underline;
-  font-size: clamp(0rem, 0rem + 1.25vw, 1.5625rem);
+  font-size: clamp(0.5rem, 0.5rem + 1.4vw, 3.4375rem);
 }
 
 h2,
@@ -96,7 +86,6 @@ main section {
 }
 
 .links a {
-  color: #000000;
   font-weight: 700;
   text-decoration: none;
 }
@@ -223,37 +212,86 @@ footer {
     width: 75%;
     height: 20vh;
   }
+  #menu-toggle {
+    display: none;
+  }
+  .menu-btn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1003;
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: left 0.3s ease;
+  }
+  .menu-btn::after {
+    content: "☰";
+  }
+  #menu-toggle:checked + .menu-btn::after {
+    content: "✖";
+  }
+  #menu-toggle:checked + .menu-btn {
+    left: 160px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  #menu-toggle:checked ~ .overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 170px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1002;
+  }
+  #menu-toggle:checked ~ .sidebar {
+    left: 0;
+  }
+  .sidebar .links a {
+    display: block;
+    margin: 10px, 0, 10px, 0;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  .sidebar .links a:hover {
+    color: #f7483b;
+  }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
-    background-color: #cf9d40;
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(158, 123, 41, 0.75);
   }
   .link__box:hover {
-    background-color: #cb3416;
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .link__box--awards {
-    background-color: #e6b216;
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
   .link__box--awards:hover {
-    background-color: rgba(85, 148, 64, 0.431372549);
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .links a {
-    font-size: clamp(0rem, 0rem + 1.9531vw, 0.9375rem);
+    font-size: clamp(0.625rem, 0.4049rem + 1.7606vw, 1.25rem);
   }
   .button-top {
     grid-area: 15/8/16/9;
@@ -423,37 +461,86 @@ footer {
     width: 60%;
     height: 50vh;
   }
+  #menu-toggle {
+    display: none;
+  }
+  .menu-btn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1003;
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: left 0.3s ease;
+  }
+  .menu-btn::after {
+    content: "☰";
+  }
+  #menu-toggle:checked + .menu-btn::after {
+    content: "✖";
+  }
+  #menu-toggle:checked + .menu-btn {
+    left: 240px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  #menu-toggle:checked ~ .overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1002;
+  }
+  #menu-toggle:checked ~ .sidebar {
+    left: 0;
+  }
+  .sidebar .links a {
+    display: block;
+    margin: 10px;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  .sidebar .links a:hover {
+    color: #f7483b;
+  }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
-    background-color: rgba(207, 157, 64, 0.2666666667);
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(158, 123, 41, 0.75);
   }
   .links a {
     font-size: clamp(0.9375rem, -1.0022rem + 4.0359vw, 1.5rem);
   }
   .link__box:hover {
-    background-color: rgba(203, 52, 22, 0.2666666667);
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .link__box--awards {
-    background-color: rgba(230, 178, 22, 0.3568627451);
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
   .link__box--awards:hover {
-    background-color: rgba(68, 99, 58, 0.2941176471);
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .button-top {
     grid-area: 15/8/16/9;
@@ -634,37 +721,20 @@ footer {
   }
   /* Aplicamos la metodologia BEM a esta seccion */
   .link__box {
-    background-color: rgba(197, 149, 60, 0.3764705882);
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(158, 123, 41, 0.75);
   }
   .links a {
-    font-size: clamp(1.5rem, 0.7619rem + 1.1905vw, 2.25rem);
+    font-size: clamp(1rem, 0.7619rem + 1.1905vw, 2.25rem);
   }
   .link__box:hover {
-    background-color: #cb3416;
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
   .link__box--awards {
-    background-color: #e6b216;
     border-radius: 10%;
-    -webkit-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    -moz-box-shadow: 5px 5px 0px 0px rgba(222, 164, 29, 0.75);
-    box-shadow: 5px 5px 0px 0px rgba(8, 8, 6, 0.75);
   }
   .link__box--awards:hover {
-    background-color: rgba(85, 148, 64, 0.431372549);
     border-radius: 10%;
-    -webkit-box-shadow: 10px 10px 0px 0px rgba(18, 17, 17, 0.75);
-    -moz-box-shadow: 10px 10px 0px 0px rgba(20, 20, 20, 0.75);
-    box-shadow: 10px 10px 0px 0px rgba(19, 19, 19, 0.75);
   }
-  /* --- Sidebar funcional --- */
   #menu-toggle {
     display: none;
   }
@@ -722,13 +792,13 @@ footer {
   }
   .sidebar .links a {
     display: block;
+    margin: 10px;
     padding: 15px 20px;
     color: white;
     text-decoration: none;
-    font-size: 1.2rem;
   }
   .sidebar .links a:hover {
-    background-color: #444;
+    color: #f7483b;
   }
   .button-top {
     grid-area: 10/16/10/16;
