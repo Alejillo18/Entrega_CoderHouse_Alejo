@@ -1,17 +1,21 @@
 @charset "UTF-8";
-/* Tipografia titulos y textos unificadas */
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Euphoria+Script&family=Playfair+Display:wght@400..900&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Euphoria+Script&family=Playfair+Display:wght@400..900&display=swap);
+.subtitle,
+.title {
+  font-family: "Playfair Display", serif;
+}
+body,
+footer {
+  background-color: #000;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background-color: #000000;
   color: #f7483b;
 }
-
 .links {
   display: flex;
   flex-flow: column wrap;
@@ -21,84 +25,68 @@ body {
   flex-shrink: 1;
   margin: 50px;
 }
-
 .links li {
   list-style: none;
 }
-
 .button {
   width: 30px;
   height: 30px;
   border-radius: 5px;
-  background: radial-gradient(#f7483b, #000000);
+  background: radial-gradient(#f7483b, #000);
 }
-
 .title {
   text-align: center;
   font-weight: 900;
-  font-family: "Playfair Display", serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   font-size: clamp(0rem, 0rem + 2vw, 2.5rem);
   margin-top: 35px;
 }
-
 .subtitle {
-  font-family: "Playfair Display", serif;
   text-decoration: underline;
   font-size: clamp(0.5rem, 0.5rem + 1.4vw, 3.4375rem);
 }
-
+.links a,
+.text-list {
+  text-decoration: none;
+}
 h2,
 h3 {
   font-size: clamp(0.8125rem, 0.8125rem + 1.4vw, 3.4375rem);
 }
-
 #logo {
   border-radius: 35%;
 }
-
 .text {
-  font-family: "Cinzel", serif;
+  font-family: Cinzel, serif;
   font-size: clamp(0.5rem, 0.5rem + 0.7vw, 2.25rem);
 }
-
 main {
   background-image: url(../assets/Fondo-principal.webp);
-  color: white;
+  color: #fff;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
-
 main section {
   background-color: rgba(37, 37, 37, 0.2);
   padding: 30px;
 }
-
 .text-list {
-  text-decoration: none;
   font-size: 20px;
-  color: white;
+  color: #fff;
 }
-
 .list {
   list-style-type: none;
 }
-
 .links a {
   font-weight: 700;
-  text-decoration: none;
 }
-
 footer {
-  background-color: black;
-  color: white;
+  color: #fff;
   font-size: clamp(0rem, 0rem + 1.75vw, 2.1875rem);
 }
-
-/* Estilos characters */
 .char img {
   width: 100%;
   height: 15em;
@@ -108,7 +96,6 @@ footer {
   filter: sepia();
   object-fit: cover;
 }
-
 .container-char {
   display: grid;
   grid-template-columns: 1fr;
@@ -117,30 +104,38 @@ footer {
   max-width: 1000px;
   margin: 60px auto;
 }
-
-/* Estilos awards */
 .awards-text {
   font-size: clamp(0.625rem, 0.625rem + 1.25vw, 2.1875rem);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 600;
   color: #cf9d40;
 }
-
-/*  Estilos smartphones */
 @media (max-width: 768px) {
+  .main,
   body {
     display: grid;
+  }
+  .menu-btn,
+  header {
+    background-color: #000;
+  }
+  .button-top,
+  .container,
+  header #logo {
+    align-self: center;
+  }
+  body {
     grid-template-rows: auto 99% auto;
     grid-template-areas: "header" "main" "footer";
   }
   header {
-    background-color: #000000;
     color: #f7483b;
     grid-area: header;
   }
   .header-content {
     display: grid;
-    grid-template: repeat(2, 1fr)/repeat(8, 0.5fr);
+    grid-template: repeat(2, 1fr) / repeat(8, 0.5fr);
   }
   .header-content .title {
     grid-area: 1/3/1/7;
@@ -156,15 +151,13 @@ footer {
     width: 20px;
     height: fit-content;
     grid-area: 2/7/2/8;
-    align-self: center;
     justify-self: end;
   }
   main {
     grid-area: main;
   }
   .main {
-    display: grid;
-    grid-template: repeat(16, auto)/repeat(8, 1fr);
+    grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
   .res_princ {
     grid-area: 1/2/2/8;
@@ -184,7 +177,7 @@ footer {
     flex-flow: row wrap;
     min-width: 1%;
     justify-content: space-around;
-    border: solid 2px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
   }
   .text-list {
     font-size: clamp(0rem, 0rem + 1.3021vw, 0.625rem);
@@ -223,12 +216,17 @@ footer {
     left: 0;
     transform: translateY(-50%);
     z-index: 1003;
-    background-color: #000000;
-    color: white;
+    color: #fff;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
+  }
+  .overlay,
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
   }
   .menu-btn::after {
     content: "☰";
@@ -240,15 +238,12 @@ footer {
     left: 180px;
   }
   .overlay {
-    position: fixed;
-    top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
     z-index: 1000;
   }
   #menu-toggle:checked ~ .overlay {
@@ -256,18 +251,20 @@ footer {
     pointer-events: auto;
   }
   .sidebar {
-    position: fixed;
-    top: 0;
     left: -250px;
     width: 185px;
-    height: 100%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
     z-index: 1002;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .map,
+  .res-game {
+    background-color: rgba(37, 37, 37, 0.2);
+    filter: sepia();
   }
   .sidebar .links a {
     display: flex;
@@ -275,13 +272,13 @@ footer {
     margin: 10px;
     padding: 12px 20px;
     font-size: clamp(0.3125rem, 0.269rem + 1.3928vw, 0.9375rem);
-    font-family: "Cinzel", serif;
-    font-weight: bold;
-    color: white;
+    font-family: Cinzel, serif;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: 0.3s;
   }
   .sidebar .links a:hover {
     background: rgba(247, 72, 59, 0.15);
@@ -291,17 +288,10 @@ footer {
   #menu-toggle:checked ~ .sidebar {
     left: 0;
   }
-  /* Aplicamos la metodologia BEM a esta seccion */
-  .link__box {
-    border-radius: 10%;
-  }
+  .link__box,
+  .link__box--awards,
+  .link__box--awards:hover,
   .link__box:hover {
-    border-radius: 10%;
-  }
-  .link__box--awards {
-    border-radius: 10%;
-  }
-  .link__box--awards:hover {
     border-radius: 10%;
   }
   .links a {
@@ -309,13 +299,11 @@ footer {
   }
   .button-top {
     grid-area: 15/8/16/9;
-    align-self: center;
     justify-self: center;
   }
   footer {
     grid-area: footer;
   }
-  /* Estilos pagina Personajes */
   .char-section {
     display: grid;
     grid-area: 1/1/10/9;
@@ -342,69 +330,70 @@ footer {
   }
   .char .text em {
     text-decoration: underline;
-    font-weight: bold;
+    font-weight: 700;
     color: wheat;
   }
   .char:nth-child(odd):hover img {
     transform: translate(50%);
     filter: none;
-    transition: all 1s;
+    transition: 1s;
   }
   .char:nth-child(odd):hover .text {
     transform: translateX(-50%);
     opacity: 1;
-    transition: all 1s;
+    transition: 1s;
   }
-  .char:nth-child(even):hover img {
+  .char:nth-child(2n):hover img {
     transform: translateX(-50%);
     filter: none;
-    transition: all 1s;
+    transition: 1s;
   }
-  .char:nth-child(even):hover .text {
+  .char:nth-child(2n):hover .text {
     transform: translateX(50%);
     opacity: 1;
-    transition: all 1s;
+    transition: 1s;
   }
-  /* Estilos pagina Gameplay */
   .res-game {
     grid-area: 1/2/10/8;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
   }
   .map {
     grid-area: 10/2/15/8;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
   }
-  /* Estilos pagina Awards */
   .awards {
     grid-area: 1/2/15/8;
   }
   .awards-text {
     margin: 20px;
   }
-  /* Estilos pagina Contacto */
-  /* Utilizamos bootstrap y es responsive en todos los anchos de pantalla */
   .container {
-    align-self: center;
     justify-self: center;
   }
 }
-/* Estilos tablets/Notebooks*/
 @media (max-width: 992px) and (min-width: 769px) {
+  .main,
   body {
     display: grid;
+  }
+  .menu-btn,
+  header {
+    background-color: #000;
+  }
+  .button-top,
+  .container,
+  header #logo {
+    align-self: center;
+  }
+  body {
     grid-template-rows: auto 99% auto;
     grid-template-areas: "header" "main" "footer";
   }
   header {
-    background-color: #000000;
     color: #f7483b;
     grid-area: header;
   }
   .header-content {
     display: grid;
-    grid-template: repeat(2, 1fr)/repeat(8, 0.5fr);
+    grid-template: repeat(2, 1fr) / repeat(8, 0.5fr);
   }
   .header-content .title {
     grid-area: 1/3/1/7;
@@ -420,15 +409,13 @@ footer {
     width: 20px;
     height: fit-content;
     grid-area: 2/7/2/8;
-    align-self: center;
     justify-self: end;
   }
   main {
     grid-area: main;
   }
   .main {
-    display: grid;
-    grid-template: repeat(16, auto)/repeat(8, 1fr);
+    grid-template: repeat(16, auto) / repeat(8, 1fr);
   }
   .res_princ {
     grid-area: 1/2/2/8;
@@ -448,7 +435,7 @@ footer {
     flex-flow: row wrap;
     min-width: 1%;
     justify-content: space-around;
-    border: solid 2px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
   }
   .text-list {
     font-size: clamp(0.625rem, -1.5179rem + 4.4643vw, 1.25rem);
@@ -488,12 +475,23 @@ footer {
     left: 0;
     transform: translateY(-50%);
     z-index: 1003;
-    background-color: #000000;
-    color: white;
+    color: #fff;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
+  }
+  .overlay,
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+  }
+  .link__box,
+  .link__box--awards,
+  .link__box--awards:hover,
+  .link__box:hover {
+    border-radius: 10%;
   }
   .menu-btn::after {
     content: "☰";
@@ -505,15 +503,12 @@ footer {
     left: 255px;
   }
   .overlay {
-    position: fixed;
-    top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
     z-index: 1000;
   }
   #menu-toggle:checked ~ .overlay {
@@ -521,18 +516,20 @@ footer {
     pointer-events: auto;
   }
   .sidebar {
-    position: fixed;
-    top: 0;
     left: -250px;
     width: 260px;
-    height: 100%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
     z-index: 1002;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .map,
+  .res-game {
+    background-color: rgba(37, 37, 37, 0.2);
+    filter: sepia();
   }
   .sidebar .links a {
     display: flex;
@@ -541,13 +538,13 @@ footer {
     padding: 12px 20px;
     margin: 10px;
     font-size: clamp(0.9375rem, -0.9936rem + 4.0179vw, 1.5rem);
-    font-family: "Cinzel", serif;
-    font-weight: bold;
-    color: white;
+    font-family: Cinzel, serif;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: 0.3s;
   }
   .sidebar .links a:hover {
     background: rgba(247, 72, 59, 0.15);
@@ -557,31 +554,16 @@ footer {
   #menu-toggle:checked ~ .sidebar {
     left: 0;
   }
-  /* Aplicamos la metodologia BEM a esta seccion */
-  .link__box {
-    border-radius: 10%;
-  }
   .links a {
     font-size: clamp(0.9375rem, -1.0022rem + 4.0359vw, 1.5rem);
   }
-  .link__box:hover {
-    border-radius: 10%;
-  }
-  .link__box--awards {
-    border-radius: 10%;
-  }
-  .link__box--awards:hover {
-    border-radius: 10%;
-  }
   .button-top {
     grid-area: 15/8/16/9;
-    align-self: center;
     justify-self: center;
   }
   footer {
     grid-area: footer;
   }
-  /* Estilos pagina Personajes */
   .char-section {
     display: grid;
     grid-area: 1/2/10/8;
@@ -608,41 +590,35 @@ footer {
   }
   .char .text em {
     text-decoration: underline;
-    font-weight: bold;
+    font-weight: 700;
     color: wheat;
   }
   .char:nth-child(odd):hover img {
     transform: translate(50%);
     filter: none;
-    transition: all 1s;
+    transition: 1s;
   }
   .char:nth-child(odd):hover .text {
     transform: translateX(-50%);
     opacity: 1;
-    transition: all 1s;
+    transition: 1s;
   }
-  .char:nth-child(even):hover img {
+  .char:nth-child(2n):hover img {
     transform: translateX(-50%);
     filter: none;
-    transition: all 1s;
+    transition: 1s;
   }
-  .char:nth-child(even):hover .text {
+  .char:nth-child(2n):hover .text {
     transform: translateX(50%);
     opacity: 1;
-    transition: all 1s;
+    transition: 1s;
   }
-  /* Estilos pagina Gameplay */
   .res-game {
     grid-area: 1/2/10/8;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
   }
   .map {
     grid-area: 10/2/15/8;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
   }
-  /* Estilos pagina Awards */
   .awards {
     grid-area: 1/2/15/8;
   }
@@ -650,25 +626,31 @@ footer {
     margin: 20px;
   }
   .container {
-    align-self: center;
     justify-self: center;
   }
 }
-/* Estilos PC escritorio */
 @media (min-width: 993px) {
+  .main,
   body {
     display: grid;
+  }
+  .char img,
+  .map {
+    max-width: 600px;
+    max-height: 600px;
+  }
+  body {
     grid-template-rows: auto 99% auto;
     grid-template-areas: "header" "main" "footer";
   }
   header {
-    background-color: #000000;
+    background-color: #000;
     color: #f7483b;
     grid-area: header;
   }
   .header-content {
     display: grid;
-    grid-template: repeat(3, 1fr)/repeat(8, 0.5fr);
+    grid-template: repeat(3, 1fr) / repeat(8, 0.5fr);
   }
   .header-content .title {
     grid-area: 1/3/1/7;
@@ -691,8 +673,7 @@ footer {
     grid-area: main;
   }
   .main {
-    display: grid;
-    grid-template: repeat(10, auto)/repeat(16, 1fr);
+    grid-template: repeat(10, auto) / repeat(16, 1fr);
   }
   .text {
     font-size: clamp(0.9375rem, -0.2951rem + 1.9861vw, 2.1875rem);
@@ -705,7 +686,14 @@ footer {
   }
   .consolas {
     grid-area: 1/8/4/16;
-    background: linear-gradient(45deg, rgba(37, 37, 37, 0.001), rgba(108, 74, 5, 0.6196078431), #e6b216, #a8550d, rgba(124, 10, 2, 0.7333333333));
+    background: linear-gradient(
+      45deg,
+      rgba(37, 37, 37, 0.001),
+      rgba(108, 74, 5, 0.6196078431),
+      #e6b216,
+      #a8550d,
+      rgba(124, 10, 2, 0.7333333333)
+    );
   }
   .consolas-lista {
     display: flex;
@@ -718,7 +706,13 @@ footer {
     flex-flow: row wrap;
     min-width: 1%;
     justify-content: space-around;
-    border: solid 2px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  .link__box,
+  .link__box--awards,
+  .link__box--awards:hover,
+  .link__box:hover {
+    border-radius: 10%;
   }
   .text-list {
     font-size: clamp(0.625rem, -1.5179rem + 4.4643vw, 1.25rem);
@@ -734,7 +728,7 @@ footer {
   }
   .trailer-port {
     display: grid;
-    grid-template: repeat(2, auto)/repeat(2, 0.5fr);
+    grid-template: repeat(2, auto) / repeat(2, 0.5fr);
     grid-area: 9/2/10/16;
     align-items: center;
   }
@@ -754,21 +748,13 @@ footer {
     height: 50vh;
     margin: auto;
   }
-  /* Aplicamos la metodologia BEM a esta seccion */
-  .link__box {
-    border-radius: 10%;
+  .char .text,
+  .char img {
+    height: 400px;
+    z-index: 1;
   }
   .links a {
     font-size: clamp(1rem, 0.7619rem + 1.1905vw, 2.25rem);
-  }
-  .link__box:hover {
-    border-radius: 10%;
-  }
-  .link__box--awards {
-    border-radius: 10%;
-  }
-  .link__box--awards:hover {
-    border-radius: 10%;
   }
   #menu-toggle {
     display: none;
@@ -779,12 +765,18 @@ footer {
     left: 0;
     transform: translateY(-50%);
     z-index: 1003;
-    background-color: #000000;
-    color: white;
+    background-color: #000;
+    color: #fff;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
+  }
+  .overlay,
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
   }
   .menu-btn::after {
     content: "☰";
@@ -796,15 +788,12 @@ footer {
     left: 240px;
   }
   .overlay {
-    position: fixed;
-    top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
     z-index: 1000;
   }
   #menu-toggle:checked ~ .overlay {
@@ -812,18 +801,20 @@ footer {
     pointer-events: auto;
   }
   .sidebar {
-    position: fixed;
-    top: 0;
     left: -250px;
     width: 240px;
-    height: 100%;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 60px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
     z-index: 1002;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.8);
+  }
+  .map,
+  .res-game {
+    background-color: rgba(37, 37, 37, 0.2);
+    filter: sepia();
   }
   .sidebar .links a {
     display: flex;
@@ -832,13 +823,18 @@ footer {
     padding: 12px 20px;
     margin: 10px;
     font-size: 1.1rem;
-    font-family: "Cinzel", serif;
-    font-weight: bold;
-    color: white;
+    font-family: Cinzel, serif;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    transition: 0.3s;
+  }
+  .button-top,
+  .map {
+    justify-self: center;
+    align-self: center;
   }
   .sidebar .links a:hover {
     background: rgba(247, 72, 59, 0.15);
@@ -850,13 +846,10 @@ footer {
   }
   .button-top {
     grid-area: 10/16/10/16;
-    align-self: center;
-    justify-self: center;
   }
   footer {
     grid-area: footer;
   }
-  /* Estilos pagina Personajes */
   .char-section {
     display: grid;
     grid-area: 1/2/10/16;
@@ -874,75 +867,55 @@ footer {
     opacity: 0;
     width: 50%;
     max-width: 400px;
-    height: 400px;
-    z-index: 1;
+  }
+  .char:nth-child(2n):hover .text,
+  .char:nth-child(odd):hover .text {
+    opacity: 1;
+    font-size: 2rem;
+    transition: 2s;
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .char img {
-    height: 400px;
     width: 400px;
-    max-width: 600px;
-    max-height: 600px;
-    z-index: 1;
   }
   .char .text em {
     text-decoration: underline;
-    font-weight: bold;
+    font-weight: 700;
     color: wheat;
   }
   .char:nth-child(odd):hover img {
     transform: translate(50%);
     filter: none;
-    transition: all 2s;
+    transition: 2s;
   }
   .char:nth-child(odd):hover .text {
     transform: translateX(-60%);
-    opacity: 1;
-    font-size: 2rem;
-    transition: all 2s;
-    background-color: rgba(0, 0, 0, 0.1);
   }
-  .char:nth-child(even):hover img {
+  .char:nth-child(2n):hover img {
     transform: translateX(-50%);
     filter: none;
-    transition: all 2s;
+    transition: 2s;
   }
-  .char:nth-child(even):hover .text {
+  .char:nth-child(2n):hover .text {
     transform: translateX(60%);
-    opacity: 1;
-    font-size: 2rem;
-    transition: all 2s;
-    background-color: rgba(0, 0, 0, 0.1);
   }
-  /* Estilos pagina Gameplay */
   .res-game {
     grid-area: 1/2/8/9;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
   }
   .map {
     grid-area: 1/9/8/16;
-    background-color: rgba(37, 37, 37, 0.2);
-    filter: sepia();
     width: fit-content;
-    max-width: 600px;
     height: auto;
-    max-height: 600px;
-    align-self: center;
-    justify-self: center;
   }
-  /* Estilos pagina Awards */
   .awards {
     grid-area: 1/2/9/16;
   }
   .awards-text {
     margin: 20px;
   }
-  /* Ajustamos un centrado al formulario de la pagina contacto, ya que en pc de escritorios, se ve muy a la izquierda */
   .container {
     align-self: center;
     justify-self: center;
     grid-area: 1/1/9/16;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
