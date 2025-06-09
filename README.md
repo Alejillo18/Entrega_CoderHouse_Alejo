@@ -6,7 +6,7 @@ Este proyecto es la entrega final del curso de **Desarrollo Web** de [CoderHouse
 
 ## Sitio web publicado
 
-🔗 [https://entrega-coder-house-alejo-fnh2e6niw-alejo-oviedos-projects.vercel.app](https://entrega-coder-house-alejo-fnh2e6niw-alejo-oviedos-projects.vercel.app)
+🔗  [https://entrega-coder-house-alejo.vercel.app](https://entrega-coder-house-alejo.vercel.app)
 
 ---
 
